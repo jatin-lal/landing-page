@@ -1,0 +1,115 @@
+@import "compass";
+@import "compass/reset";
+@import "https://fonts.googleapis.com/css?family=Raleway:300,400";
+
+////////// Some basic Variables ///////////
+$off-black: #333;
+$light-black: #777;
+$off-white: #f6f6f6;
+$border-radius: 4px;
+$primary: #34495E;
+
+////////// Some basic styles //////////////
+body{background-color: $off-white;}
+p, i, a{color: $off-black;font-family: 'Raleway', sans-serif;}
+a{&, &:hover, &:active{text-decoration: none;}}
+textarea, button, input, select{
+	border: none;background-color: white;padding: 4px 8px;@include box-sizing(border-box);
+	&:active, &:focus{outline: none;}
+}
+img{vertical-align: middle;}
+
+//////////// Some basic classes /////////////
+.mrow{&:after{clear: both;display: block;content: "";}}
+.left{@include float-left;}
+.right{@include float-right;}
+.container{width: 1170px;margin: 0 auto;}
+@media(max-width: 1200px){width: 970px;}
+///////// Style specifically for home page ///////////
+
+/********* for parallax on first section *************/
+#home-para{height: 480px;width: 100%;background-color: white;position: relative;overflow: hidden;margin-top: 48px;}
+.lr{
+	position: absolute;top: 0;left: 0;width: 100%;height: 100%;@include opacity(0.5);@include transition(120ms);
+	.lrc{height: 100%;width: 100%;position: relative;}
+}
+#lr1{@include filter(blur(1.4px));p{font-size: 1.2em;}}
+#lr2{@include filter(blur(1.0px));p{font-size: 2em;}}
+#lr3{@include filter(blur(0.6px));p{font-size: 2.8em;}}
+.prx{position: absolute;}
+#prx1{top: 10%;left: 20%;}
+#prx2{top: 40%;left: 40%;}
+#prx3{top: 50%;right: 20%;}
+#prx4{top: 20%;left: 26%;}
+#prx5{bottom: 3%;left: 50%;}
+#prx6{top: 23%;right: 29%;}
+#prx7{top: 30%;left: 2%;}
+#prx8{top: 72%;right: 5%;}
+#prx9{top: 67%;left: 21.4%;}
+#prx10{top: 16%;right: 10.4%;}
+#prx11{bottom: 9%;left: 1.4%;}
+#nav{
+	min-height: 48px;width: 100%;background-color: white;@include box-shadow(0px 0px 4px 0 rgba(0,0,0,0.15));position: fixed;top: 0;left: 0;z-index: 2;
+	#logo{img{height: 40px;margin: 4px 0;}}
+}
+.home-parr-over{position: absolute;width: 100%;height: 100%;top: 0;left: 0;background: linear-gradient(rgba(46, 204, 113, 0.5), rgba(39, 174, 94 , 0.5));display: table;}
+#home-search{
+	display: table-cell;vertical-align: middle;
+	form{width: 600px;margin: 0 auto;}
+	.field{
+		@include float-left;padding: 0 6px;@include box-sizing(border-box);
+		input, select{height: 44px;width: 100%;@include border-radius(4px);}
+		width: 40%;
+		input{background-color: $primary;color: $off-white;cursor: pointer;}
+		&:last-child{width: 20%;}
+	}
+}
+
+
+/********** for parallax images on second section *************/
+#sec-para{
+	height: 500px;background-color: #fff;padding: 40px 0;@include box-sizing(border-box);
+	.container, .mrow, #col-con-par{height: 100%;display: table;}
+	.content{display: table-cell;vertical-align: middle;}
+}
+#img-cont{
+	position: relative;
+	img{
+		position: absolute;border: 3px solid #fff;@include box-sizing(border-box);@include transition(50ms);
+		&:first-child{top: 30px;left: 20px;}
+		&:last-child{top: 80px;left: 80px;}
+	}
+}
+#col-ima-par{width: 40%;min-height: 1px;}
+#col-con-par{
+	width: 60%;height: 100%;
+	p{text-align: center;}
+	.content{width: 80%;margin: 0 auto;}
+	.sec-par-title{font-size: 2em;font-weight: bold;}
+	.sec-par-content{margin-top: 12px;font-size: 1.2em;line-height: 1.2em;color: $light-black;}
+}
+
+#sub-section{
+	height: 240px;position: relative;width: 100%;overflow: hidden;
+	#sec-bkg{width: calc(100% + 8px);height: calc(100% + 16px);display: table;margin-left: -4px;margin-top: -8px;position: absolute;top: 0px;left: 0px;background: url("../media/ban1.jpg");@include background-size(cover);background-position: 0, -200px;@include filter(blur(3px));overflow: hidden;}
+	#sub-cnt{display: table;position: absolute;height: 100%;width: 100%;}
+	#sub-ct{display: table-cell;vertical-align: middle;}
+}
+.fl-cn{
+	width: 400px;margin: 0 auto;
+	p{margin-bottom: 18px;font-size: 1.3em;color: $off-white;text-align: center;}
+	#txt{width: 70%;input{@include border-radius(6px 0px 0px 6px);}}
+	.fld{
+		@include float-left;
+		&:last-child{
+			width: 30%;
+			input{@include border-radius(0px 6px 6px 0px);}
+		}
+	}
+	input{
+		height: 40px;width: 100%;@include box-sizing(border-box);
+		&[type='submit']{background-color: #2ECC71;color: $off-white;}
+	}
+}
+
+#footer{min-height: 300px;background-color: $primary;}
