@@ -6,6 +6,7 @@ This is a simple, fast and attractive webpage built on top of HTML, CSS, SCSS, C
 To edit CSS Styling
 --------------
 You need to install Ruby, along with gems for Compass and SCSS. After installation, go to landing-page directory, open a terminal and run
+
     $ compass watch
 
 To edit JS Code
