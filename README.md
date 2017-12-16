@@ -9,6 +9,10 @@ You need to install Ruby, along with gems for Compass and SCSS. After installati
 
     $ compass watch
 
+and to compile compressed css styles, run
+
+    $ compass compile -e production --force
+
 To edit JS Code
 --------------
 Javascript code is written in "scripts/landing-page.js".
